@@ -19,3 +19,4 @@ The various python programs in order to use a computer to interface with the tee
 
 When the `working_wind_input.ino` example is loaded on the teensy, these python examples will modify the wind speed value on the displays.
 
+The parameters passed must include the USB connection that the teensy is connected too.
