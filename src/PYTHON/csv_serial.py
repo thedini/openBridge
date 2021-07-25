@@ -4,6 +4,7 @@
 import serial
 import csv
 import sys
+from time import sleep
 
 # Command line parameters
 USB_PORT = str(sys.argv[1])
@@ -22,6 +23,7 @@ def main():
             # Encode the value to binary
             serial_bus.write(current_val.encode())
             print(f"Value should be {current_val}")
+            sleep(5)
 
 if __name__ == "__main__":
     main()
