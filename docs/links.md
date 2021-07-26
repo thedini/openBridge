@@ -13,6 +13,8 @@ The foundation of learning NMEA 2000 is to have a basic understanding of the CAN
 NMEA 2000 is based heavily on ISO11783 but implemented differently with specific PGNs.
 
 - [CAN-Boat Wiki](https://github.com/canboat/canboat/wiki)
+- [TTlappalainen NMEA2000 Library](https://github.com/ttlappalainen/NMEA2000)
+- [TTlappalainene Teensy 4.0/4.1 Library](https://github.com/ttlappalainen/NMEA2000_Teensyx)
 - [KUS Quick Guide](https://kus-usa.com/resources/a-quick-guide-to-nmea-2000/)
 - [Vyacht NMEA 2000 info and Seatalk 1](https://www.vyacht.net/doc-vyacht-to-nmea2000.html)
 

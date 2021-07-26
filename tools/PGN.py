@@ -17,7 +17,7 @@ def main():
   reserve = str(binary_input[3])
   data_page = str(binary_input[4])
   pdu_field = str(binary_input[5:13])
-  group_ext = str(binary_input[14:21])
+  group_ext = str(binary_input[13:21])
 
 # check if PDU Format Field is less than 240
   if int(pdu_field, 2) < 240:
