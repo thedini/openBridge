@@ -47,12 +47,6 @@ double ReadWindAngle(int angle) {
   return DegToRad(angle); // Read here the measured wind angle e.g. from analog input
 }
 
-double ReadWindSpeed(float wind) {
-  double wind_speed = ((double)wind)/2;
-  wind_speed = wind_speed/30 + wind_speed;
-  return wind_speed;
-}
-
 
 
 void SendN2kWind() {
@@ -63,7 +57,7 @@ void SendN2kWind() {
     speed = passed_string.toFloat();
   }
   if ( WindUpdated+WindUpdatePeriod<millis() ) {
-    my_angle = (my_angle+5)%360;
+    my_angle = 0;
     SetN2kWindSpeed(N2kMsg, 1, ReadWindSpeed(speed), ReadWindAngle(my_angle),N2kWind_Apprent);
     WindUpdated=millis();
     NMEA2000.SendMsg(N2kMsg);
