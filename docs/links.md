@@ -17,11 +17,16 @@ NMEA 2000 is based heavily on ISO11783 but implemented differently with specific
 - [TTlappalainene Teensy 4.0/4.1 Library](https://github.com/ttlappalainen/NMEA2000_Teensyx)
 - [KUS Quick Guide](https://kus-usa.com/resources/a-quick-guide-to-nmea-2000/)
 - [Vyacht NMEA 2000 info and Seatalk 1](https://www.vyacht.net/doc-vyacht-to-nmea2000.html)
-
+- [NMEA Link Appendix B.6 (Class & Function Codes)](https://www.nmea.org/Assets/20120726%20nmea%202000%20class%20&%20function%20codes%20v%202.00.pdf)
+- [NMEA Vendor Registration](https://www.nmea.org/Assets/20121020%20nmea%202000%20registration%20list.pdf)
 
 ## Tooling
 
 There are links related to tooling that may be helpful.
+
+### NMEA2000 Translators
+
+* [Yacht Devices](https://www.yachtd.com/products/usb_gateway.html) -- The Yacht Devices is a great starting point (albeit somewhat pricey)
 
 ### Looking at NMEA/CAN Logic
 
@@ -37,10 +42,9 @@ There are links related to tooling that may be helpful.
 The canboat repository is the best source for all latest open effort to decode PGNs and document NMEA 2000. Please utilize this repository when decoding and working with NMEA 2000.
 
 - [Can-Boat](https://github.com/canboat/canboat)
+* [Yacht Devices CANview](https://www.yachtd.com/products/can_view.html) Note: [Setup can be tricky](canview.md)
 
 ## Expertise
-
-There are a few
 
 - [Dr. Yung Korean NMEA 2000 Lab](https://panbo.com/dr-yungs-nmea-2000-lab-ship-convergence-center-too/)
 - [Fathom 5 Training Platforms](https://www.fathom5.co/)

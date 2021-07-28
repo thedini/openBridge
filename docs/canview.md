@@ -1,6 +1,6 @@
 ## Introduction
 
-CANview is software for exploring can inputs from a CAN translator. It is avaliable from YachtDevices and is cross platform (kinda)
+CANview is software for exploring can inputs from a CAN translator. It is available from YachtDevices and is cross platform (kinda)
 
 ### CANview in Ubuntu
 
@@ -9,7 +9,9 @@ If you go to run CANview in a modern version of Ubuntu (in my case 20.10) you wi
 ```
 ./CANView: error while loading shared libraries: libpng12.so.0: cannot open shared object file: No such file or directory
 ```
-in order to fix this we will need to install libpng12, I will include compiling from source but one may also be able to install the .deb in Ubuntu/Debian.
+in order to fix this we will need to install libpng12, one can either compile from source or be able to install the .deb in Ubuntu/Debian.
+
+### Install
 
 1) Install Dependencies -- In order to compile you will need to do the following in install dependencies
 
