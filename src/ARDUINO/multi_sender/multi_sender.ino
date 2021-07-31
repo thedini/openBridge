@@ -1,3 +1,5 @@
+
+#include <NMEA2000_CAN.h>
 #include <N2kMessages.h>
 #include <N2kMsg.h>
 #include <NMEA2000.h>
@@ -154,7 +156,7 @@ void loop() {
     sendBattery();
     sendWind();
     sendHumidity();
-    sendDepth()
+    sendDepth();
     NMEA2000.ParseMessages();
 }
 
@@ -170,15 +172,15 @@ void updateValues(){
                 cabin_temp = passed_data.substring(passed_data.indexOf(",")+1).toFloat();
                 break;
             case 1:
-                cleaned = passed_data.substring(0, passed_data.indexOf(",")+1));
-                voltage = cleaned.substring(0, cleaned.indexOf(",")-1).toFloat()
-                current = cleaned.substring(cleaned.indexOf(",")+1, cleaned.lastIndexOf(",")-1).toFloat()
-                bat_temp = cleaned.substring(cleaned.lastIndexOf(",")+1).toFloat()
+                cleaned = passed_data.substring(0, passed_data.indexOf(",")+1);
+                voltage = cleaned.substring(0, cleaned.indexOf(",")-1).toFloat();
+                current = cleaned.substring(cleaned.indexOf(",")+1, cleaned.lastIndexOf(",")-1).toFloat();
+                bat_temp = cleaned.substring(cleaned.lastIndexOf(",")+1).toFloat();
                 break;
             case 2:
-                cleaned = passed_data.substring(0, passed_data.indexOf(",")+1));
-                wind_speed = cleaned.substring(0, cleaned.indexOf(",")-1).toFloat()
-                wind_dir = cleaned.substring(cleaned.lastIndexOf(",")+1).toFloat()
+                cleaned = passed_data.substring(0, passed_data.indexOf(",")+1);
+                wind_speed = cleaned.substring(0, cleaned.indexOf(",")-1).toFloat();
+                wind_dir = cleaned.substring(cleaned.lastIndexOf(",")+1).toFloat();
                 break;
             case 3:
                 humidity_val = passed_data.substring(passed_data.indexOf(",")+1).toFloat();
@@ -224,7 +226,7 @@ void sendWind(){
 
   if ( Updated+windPeriod<millis() ) {
     Updated=millis();
-    SetN2kWindSpeed(N2kMsg, 1, ReadWindSpeed(wind_speed), DegToRad(wind_dir),N2kWind_Apprent);
+    SetN2kWindSpeed(N2kMsg, 1, wind_speed, DegToRad(wind_dir),N2kWind_Apprent);
     NMEA2000.SendMsg(N2kMsg,WIND);
   }
 }
