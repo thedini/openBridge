@@ -1,18 +1,17 @@
-
 #include <NMEA2000_CAN.h>
 #include <N2kMessages.h>
 #include <N2kMsg.h>
 #include <NMEA2000.h>
 #include <NMEA2000_Teensyx.h>
 
-#define N2k_CAN_INT_PIN 21
-
+// UID values
 #define TEMP 0
 #define BAT  1
 #define WIND 2
 #define HUMID 3
 #define DEPTH 4
 
+// Period definitions
 #define tempPeriod 2000
 #define batteryPeriod 1000
 #define windPeriod 1000
@@ -148,7 +147,6 @@ void setup() {
   NMEA2000.Open();
 }
 
-
 void loop() {
 
     updateValues();
@@ -160,6 +158,7 @@ void loop() {
     NMEA2000.ParseMessages();
 }
 
+// GEts updated values from serial input
 void updateValues(){
     int uid;
     String passed_data;
@@ -194,7 +193,7 @@ void updateValues(){
     }
 }
 
-
+// Sends temperature value to the bus
 void sendTemperature() {
   static unsigned long Updated=millis();
   tN2kMsg N2kMsg;
@@ -206,8 +205,7 @@ void sendTemperature() {
   }
 }
 
-
-
+// Send batery values to the buss
 void sendBattery() {
   static unsigned long Updated=millis()+100;
   tN2kMsg N2kMsg;
@@ -219,7 +217,7 @@ void sendBattery() {
   }
 }
 
-
+// Sends wind speed and direction values
 void sendWind(){
   static unsigned long Updated=millis();
   tN2kMsg N2kMsg;
@@ -231,7 +229,7 @@ void sendWind(){
   }
 }
 
-
+// Sends humidity values
 void sendHumidity(){
   static unsigned long Updated=millis();
   tN2kMsg N2kMsg;
@@ -243,7 +241,7 @@ void sendHumidity(){
   }
 }
 
-
+// Sends depth values to the bus
 void sendDepth(){
   static unsigned long Updated=millis();
   tN2kMsg N2kMsg;
