@@ -1,4 +1,3 @@
-#include <NMEA2000_CAN.h>
 #include <N2kMessages.h>
 #include <N2kMsg.h>
 #include <NMEA2000.h>
@@ -45,7 +44,7 @@ void setup() {
 
   // Set up interface for Temp sensor
   NMEA2000.SetProductInformation("112233",
-                                 100,
+                                 135,
                                  "TEMP",
                                  "1.0",
                                  "1.0",
@@ -57,14 +56,14 @@ void setup() {
   NMEA2000.SetDeviceInformation(112233,
                                 130,
                                 75,
-                                2040,                             
+                                135,                             
                                 4,
                                 TEMP
                                );
 
   // Set up the interface for the Bat sensor
   NMEA2000.SetProductInformation("112234",
-                                 100,
+                                 176,
                                  "BAT",
                                  "1.0",
                                  "1.0",
@@ -76,14 +75,14 @@ void setup() {
   NMEA2000.SetDeviceInformation(112234,
                                 130,
                                 35,
-                                2040,                    
+                                176,                    
                                 4,
                                 BAT
                                );
 
   // Set up interface for the wind sensor
   NMEA2000.SetProductInformation("112235",
-                                 100,
+                                 135,
                                  "WIND",
                                  "1.0",
                                  "1.0",
@@ -95,14 +94,14 @@ void setup() {
   NMEA2000.SetDeviceInformation(112234,
                                 130,
                                 85,
-                                2040,                         
+                                135,                         
                                 4,
                                 WIND
                                );
 
   // Set up information for the humidity sensor
   NMEA2000.SetProductInformation("112236",
-                                 100,
+                                 135,
                                  "HUMIDITY",
                                  "1.0",
                                  "1.0",
@@ -114,14 +113,14 @@ void setup() {
   NMEA2000.SetDeviceInformation(112234,
                                 170,
                                 75,
-                                2040,                             
+                                135,                             
                                 4,
                                 HUMID
                                );
 
   // set up information for the depth sensor
   NMEA2000.SetProductInformation("112237",
-                                 100,
+                                 1851,
                                  "DEPTH",
                                  "1.0",
                                  "1.0",
@@ -133,7 +132,7 @@ void setup() {
   NMEA2000.SetDeviceInformation(112234,
                                 130,
                                 60,
-                                2040,                             
+                                1851,                             
                                 4,
                                 DEPTH
                                );
@@ -158,7 +157,7 @@ void loop() {
     NMEA2000.ParseMessages();
 }
 
-// GEts updated values from serial input
+// Gets updated values from serial input
 void updateValues(){
     int uid;
     String passed_data;
