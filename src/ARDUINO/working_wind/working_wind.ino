@@ -1,12 +1,13 @@
 /*
 Demo code that sends wind data to the bus. Only works with Maretron at the moment
 */
-#include <Arduino.h>
+
+#include <NMEA2000_Teensyx.h>
 #include <N2kMessages.h>
 #include <N2kMsg.h>
 #include <NMEA2000.h>
-#include <NMEA2000_Teensyx.h> // https://github.com/ttlappalainen/NMEA2000_Teensyx
-//
+//#include <NMEA2000_teensy.h>
+//tNMEA2000_teensy NMEA2000 // https://github.com/ttlappalainen/NMEA2000_Teensyx
 tNMEA2000_Teensyx NMEA2000;
 int speed = 0;
 int my_angle = 0;
