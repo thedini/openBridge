@@ -30,7 +30,7 @@ void setup() {
                                 85, 
                                 137                             
                                );
-  NMEA2000.SetMode(tNMEA2000::N2km_NodeOnly,23);
+  NMEA2000.SetMode(tNMEA2000::N2km_ListenAndNode,23);
   NMEA2000.EnableForward(false);
   NMEA2000.ExtendTransmitMessages(TransmitMessages);
   NMEA2000.Open();
