@@ -111,6 +111,12 @@ The next 8 bits are part of what is known as the PDU Specific field or `PS`. In 
 
 The last 8 bits are the source address and will be the ID of the node, with only 8 bits that represents 256 different addresses that are possible on the network.
 
+### Visualizing the Header
+
+Below is a breakdown bit by bit of the CAN Frame Extended Identifier with the values of our example setup therein.
+
+![CAN NMEA Extended Header](../img/NMEA_Identifer_example.png)
+
 ## Calculating PGN
 
 Now that we can taken considerable time looking at each section of the Identification section of a CAN frame we can now decode what the actual PGN is.
@@ -150,8 +156,9 @@ Put them together to get
 
 There is an easier way to do this however:
 
-1) Use the little Python script called [PGN.py](../tools/PGN.py) like this: `python3 PGN.py 09FD0217`. Note: Recall that the argument after `PGN.py` is the Hex value of the extended identifier.
-2) Utilize a handy [Google Sheet](https://www.csselectronics.com/screen/page/j1939-pgn-conversion-tool/language/en) by CSS Electronics. Simply copy to your Google Drive and enter an Identifer in and get the different parts of the Identifer and PGN.
+1. Use the little Python script called [PGN.py](../tools/PGN.py) like this: `python3 PGN.py 09FD0217`. Note: Recall that the argument after `PGN.py` is the Hex value of the extended identifier.
+
+2. Utilize a handy [Google Sheet](https://www.csselectronics.com/screen/page/j1939-pgn-conversion-tool/language/en) by CSS Electronics. Simply copy to your Google Drive and enter an Identifer in and get the different parts of the Identifer and PGN.
 
 ### Find the rest of your frame
 
