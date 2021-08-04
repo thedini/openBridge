@@ -1,0 +1,476 @@
+{
+    "PGNs": [
+        {
+            "PGN": "130074",
+            "Description": "Route and WP Service - WP List - WP Name & Position "
+        },
+        {
+            "PGN": "127503",
+            "Description": "AC Input Status"
+        },
+        {
+            "PGN": "129040",
+            "Description": "AIS Class B Extended Position Report "
+        },
+        {
+            "PGN": "130577",
+            "Description": "Direction Data "
+        },
+        {
+            "PGN": "130052",
+            "Description": "Loran-C TD Data "
+        },
+        {
+            "PGN": "129549",
+            "Description": "DGNSS Corrections "
+        },
+        {
+            "PGN": "12808",
+            "Description": "DSC Call Information "
+        },
+        {
+            "PGN": "129283",
+            "Description": "Cross Track Error "
+        },
+        {
+            "PGN": "129539",
+            "Description": "GNSS DOPs "
+        },
+        {
+            "PGN": "129538",
+            "Description": "GNSS Control Status "
+        },
+        {
+            "PGN": "129804",
+            "Description": "AIS Assignment Mode Command "
+        },
+        {
+            "PGN": "129302",
+            "Description": "Bearing and Distance between Two Marks "
+        },
+        {
+            "PGN": "127509",
+            "Description": "Inverter Status "
+        },
+        {
+            "PGN": "129802",
+            "Description": "AIS Safety Related Broadcast Message "
+        },
+        {
+            "PGN": "127489",
+            "Description": "Engine Parameters, Dynamic "
+        },
+        {
+            "PGN": "129547",
+            "Description": "GNSS Pseudorange Error Statistics "
+        },
+        {
+            "PGN": "127501",
+            "Description": "Binary Switch Bank Status "
+        },
+        {
+            "PGN": "129551",
+            "Description": "GNSS Differential Correction Receiver Signal "
+        },
+        {
+            "PGN": "129801",
+            "Description": "AIS Addressed Safety Related Message "
+        },
+        {
+            "PGN": "130576",
+            "Description": "Small Craft Status "
+        },
+        {
+            "PGN": "127493",
+            "Description": "Transmission Parameters, Dynamic "
+        },
+        {
+            "PGN": "127498",
+            "Description": "Engine Parameters, Static "
+        },
+        {
+            "PGN": "129556",
+            "Description": "GLONASS Almanac Data "
+        },
+        {
+            "PGN": "129792",
+            "Description": "AIS DGNSS Broadcast Binary Message "
+        },
+        {
+            "PGN": "129028",
+            "Description": "Altitude Delta, High Precision Rapid Update "
+        },
+        {
+            "PGN": "59392",
+            "Description": "ISO Acknowledgment "
+        },
+        {
+            "PGN": "130073",
+            "Description": "Route and WP Service - Radius of Turn "
+        },
+        {
+            "PGN": "60160",
+            "Description": "ISO Transport Protocol, Data Transfer "
+        },
+        {
+            "PGN": "129796",
+            "Description": "AIS Acknowledge "
+        },
+        {
+            "PGN": "127508",
+            "Description": "Battery Status "
+        },
+        {
+            "PGN": "130310",
+            "Description": "Environmental Parameters "
+        },
+        {
+            "PGN": "127512",
+            "Description": "AGS Configuration Status "
+        },
+        {
+            "PGN": "129550",
+            "Description": "GNSS Differential Correction Receiver Interface "
+        },
+        {
+            "PGN": "127513",
+            "Description": "Battery Configuration Status "
+        },
+        {
+            "PGN": "130306",
+            "Description": "Wind Data "
+        },
+        {
+            "PGN": "130070",
+            "Description": "Route and WP Service - WP Comment "
+        },
+        {
+            "PGN": "127496",
+            "Description": "Trip Parameters, Vessel "
+        },
+        {
+            "PGN": "126464",
+            "Description": "Receive/Transmit PGN's group function "
+        },
+        {
+            "PGN": "130067",
+            "Description": "Route and WP Service - Route - WP Name & Position "
+        },
+        {
+            "PGN": "60416",
+            "Description": "ISO Transport Protocol, Connection Management - RTS group"
+        },
+        {
+            "PGN": "130054",
+            "Description": "Loran-C Signal Data"
+        },
+        {
+            "PGN": "127257",
+            "Description": "Attitude "
+        },
+        {
+            "PGN": "129025",
+            "Description": "Position, Rapid Update "
+        },
+        {
+            "PGN": "130071",
+            "Description": "Route and WP Service - Route Comment "
+        },
+        {
+            "PGN": "128007",
+            "Description": "Thruster Information"
+        },
+        {
+            "PGN": "126996",
+            "Description": "Product Information "
+        },
+        {
+            "PGN": "129807",
+            "Description": "AIS Class B Group Assignment"
+        },
+        {
+            "PGN": "127502",
+            "Description": "Switch Bank Control "
+        },
+        {
+            "PGN": "127506",
+            "Description": "DC Detailed Status "
+        },
+        {
+            "PGN": "129799",
+            "Description": "Radio Frequency/Mode/Power "
+        },
+        {
+            "PGN": "129805",
+            "Description": "AIS Data Link Management Message "
+        },
+        {
+            "PGN": "59904",
+            "Description": "ISO Request"
+        },
+        {
+            "PGN": "129029",
+            "Description": "GNSS Position Data "
+        },
+        {
+            "PGN": "130065",
+            "Description": "Route and WP Service - Route List "
+        },
+        {
+            "PGN": "130066",
+            "Description": "Route and WP Service - Route/WP-List Attributes "
+        },
+        {
+            "PGN": "60928",
+            "Description": "ISO Address Claim "
+        },
+        {
+            "PGN": "127507",
+            "Description": "Charger Status "
+        },
+        {
+            "PGN": "129285",
+            "Description": "Navigation - Route/WP information "
+        },
+        {
+            "PGN": "129284",
+            "Description": "Navigation Data "
+        },
+        {
+            "PGN": "127245",
+            "Description": "Rudder "
+        },
+        {
+            "PGN": "130311",
+            "Description": "Environmental Parameters "
+        },
+        {
+            "PGN": "127251",
+            "Description": "Rate of Turn "
+        },
+        {
+            "PGN": "127250",
+            "Description": "Vessel Heading "
+        },
+        {
+            "PGN": "129027",
+            "Description": "Position Delta, High Precision Rapid Update "
+        },
+        {
+            "PGN": "129795",
+            "Description": "AIS Addressed Binary Message "
+        },
+        {
+            "PGN": "128259",
+            "Description": "Speed "
+        },
+        {
+            "PGN": "128008",
+            "Description": "Thruster Motor Status"
+        },
+        {
+            "PGN": "130321",
+            "Description": "Salinity Station Data "
+        },
+        {
+            "PGN": "129039",
+            "Description": "AIS Class B Position Report "
+        },
+        {
+            "PGN": "126998",
+            "Description": "Configuration Information "
+        },
+        {
+            "PGN": "127258",
+            "Description": "Magnetic Variation "
+        },
+        {
+            "PGN": "127514",
+            "Description": "AGS Status "
+        },
+        {
+            "PGN": "130320",
+            "Description": "Tide Station Data "
+        },
+        {
+            "PGN": "129541",
+            "Description": "GPS Almanac Data "
+        },
+        {
+            "PGN": "128777",
+            "Description": "Anchor Windlass Operating Status"
+        },
+        {
+            "PGN": "130069",
+            "Description": "Route and WP Service - XTE Limit & Navigation Method "
+        },
+        {
+            "PGN": "65240",
+            "Description": "ISO Commanded Address: "
+        },
+        {
+            "PGN": "129540",
+            "Description": "GNSS Sats in View "
+        },
+        {
+            "PGN": "126992",
+            "Description": "System Time "
+        },
+        {
+            "PGN": "127237",
+            "Description": "Heading/Track Control"
+        },
+        {
+            "PGN": "129793",
+            "Description": "AIS UTC and Date Report "
+        },
+        {
+            "PGN": "130324",
+            "Description": "Moored Buoy Station Data "
+        },
+        {
+            "PGN": "129794",
+            "Description": "AIS Class A Static and Voyage Related Data "
+        },
+        {
+            "PGN": "127504",
+            "Description": "AC Output Status "
+        },
+        {
+            "PGN": "130072",
+            "Description": "Route and WP Service - Database Comment "
+        },
+        {
+            "PGN": "129026",
+            "Description": "COG & SOG, Rapid Update "
+        },
+        {
+            "PGN": "128776",
+            "Description": "Windlass Control Status"
+        },
+        {
+            "PGN": "126208",
+            "Description": "NMEA - Request group function "
+        },
+        {
+            "PGN": "128006",
+            "Description": "Thruster Control Status"
+        },
+        {
+            "PGN": "129045",
+            "Description": "User Datum Settings "
+        },
+        {
+            "PGN": "128778",
+            "Description": "Anchor Windlass Monitoring Status"
+        },
+        {
+            "PGN": "128520",
+            "Description": "Tracked Target Data "
+        },
+        {
+            "PGN": "130068",
+            "Description": "Route and WP Service - Route - WP Name"
+        },
+        {
+            "PGN": "128267",
+            "Description": "Water Depth "
+        },
+        {
+            "PGN": "129545",
+            "Description": "GNSS RAIM Output "
+        },
+        {
+            "PGN": "129800",
+            "Description": "AIS UTC/Date Inquiry "
+        },
+        {
+            "PGN": "130578",
+            "Description": "Vessel Speed Components "
+        },
+        {
+            "PGN": "129301",
+            "Description": "Time to/from Mark "
+        },
+        {
+            "PGN": "129542",
+            "Description": "GNSS Pseudorange Noise Statistics "
+        },
+        {
+            "PGN": "129809",
+            "Description": "AIS Class B \"CS\" Static Report, Part A"
+        },
+        {
+            "PGN": "129810",
+            "Description": "AIS Class B"
+        },
+        {
+            "PGN": "130064",
+            "Description": "Route and WP Service - Database List "
+        },
+        {
+            "PGN": "129033",
+            "Description": "Time & Date "
+        },
+        {
+            "PGN": "129038",
+            "Description": "AIS Class A Position Report "
+        },
+        {
+            "PGN": "127505",
+            "Description": "Fluid Level "
+        },
+        {
+            "PGN": "127497",
+            "Description": "Trip Parameters, Engine "
+        },
+        {
+            "PGN": "128275",
+            "Description": "Distance Log "
+        },
+        {
+            "PGN": "129798",
+            "Description": "AIS SAR Aircraft Position Report "
+        },
+        {
+            "PGN": "127510",
+            "Description": "Charger Configuration Status "
+        },
+        {
+            "PGN": "129797",
+            "Description": "AIS Binary Broadcast Message "
+        },
+        {
+            "PGN": "130322",
+            "Description": "Current Station Data "
+        },
+        {
+            "PGN": "129803",
+            "Description": "AIS Interrogation "
+        },
+        {
+            "PGN": "130053",
+            "Description": "Loran-C Range Data "
+        },
+        {
+            "PGN": "129291",
+            "Description": "Set & Drift, Rapid Update "
+        },
+        {
+            "PGN": "130323",
+            "Description": "Meteorological Station Data "
+        },
+        {
+            "PGN": "129546",
+            "Description": "GNSS RAIM Settings "
+        },
+        {
+            "PGN": "127488",
+            "Description": "Engine Parameters, Rapid Update "
+        },
+        {
+            "PGN": "127511",
+            "Description": "Inverter Configuration Status "
+        }
+    ]
+}
