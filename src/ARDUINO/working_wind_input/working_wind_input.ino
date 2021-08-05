@@ -10,8 +10,8 @@ This script takes data from a serial connection and then relays that data over t
 
 
 tNMEA2000_Teensyx NMEA2000;
-int speed = 0;
-int my_angle = 0;
+float my_speed = 0;
+float my_angle = 0;
 String passed_string;
 // List here messages your device will transmit.
 const unsigned long TransmitMessages[] PROGMEM={130306L,0};
@@ -42,23 +42,20 @@ void loop() {
   SendN2kWind();
   NMEA2000.ParseMessages();
 }
-
-double ReadWindAngle(int angle) {
-  return DegToRad(angle); // Read here the measured wind angle e.g. from analog input
+void get_data(){
+  while(Serial.available() > 0){
+    passed_string = Serial.readString();
+    my_speed = passed_string.substring(0, passed_string.indexOf(",")).toFloat();
+    my_angle = DegToRad(passed_string.substring(passed_string.indexOf(",")+1).toInt());
+  }
 }
-
-
 
 void SendN2kWind() {
   static unsigned long WindUpdated=millis();
   tN2kMsg N2kMsg;
-  while(Serial.available() > 0){
-    passed_string = Serial.readString();
-    speed = passed_string.toFloat();
-  }
+  get_data();
   if ( WindUpdated+WindUpdatePeriod<millis() ) {
-    my_angle = 0;
-    SetN2kWindSpeed(N2kMsg, 1, ReadWindSpeed(speed), ReadWindAngle(my_angle),N2kWind_Apprent);
+    SetN2kWindSpeed(N2kMsg, 1, my_speed, my_angle,N2kWind_Apprent);
     WindUpdated=millis();
     NMEA2000.SendMsg(N2kMsg);
   }
