@@ -19,7 +19,7 @@ def main():
         for line in value_file:
             # Encode the value to binary
             serial_bus.write(line.strip().encode())
-            print(f"Value should be {line.strip()}")
+            print(f"Values should be {line.strip()}")
             sleep(5)
 
 if __name__ == "__main__":
