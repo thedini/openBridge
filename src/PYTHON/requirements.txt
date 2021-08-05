@@ -1,4 +1,1 @@
 pyserial
-csv
-sys
-time
