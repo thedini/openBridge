@@ -19,6 +19,7 @@ NMEA 2000 is based heavily on ISO11783 but implemented differently with specific
 - [Vyacht NMEA 2000 info and Seatalk 1](https://www.vyacht.net/doc-vyacht-to-nmea2000.html)
 - [NMEA Link Appendix B.6 (Class & Function Codes)](https://www.nmea.org/Assets/20120726%20nmea%202000%20class%20&%20function%20codes%20v%202.00.pdf)
 - [NMEA Vendor Registration](https://www.nmea.org/Assets/20121020%20nmea%202000%20registration%20list.pdf)
+- [PGN Search](https://www.nmea.org/content/STANDARDS/nmea_2000_pgn__search)
 
 ## Tooling
 
