@@ -2,7 +2,6 @@
 # Created by Soups71
 
 import serial
-import csv
 import sys
 from time import sleep
 
@@ -17,12 +16,10 @@ def main():
 
     # For each line in the csv write the value to the serial bus
     with open(FILENAME) as value_file:
-        file_reader = csv.reader(value_file, delimeter=',')
-        for line in file_reader:
-            current_val = line[0]
+        for line in value_file:
             # Encode the value to binary
-            serial_bus.write(current_val.encode())
-            print(f"Value should be {current_val}")
+            serial_bus.write(line.strip().encode())
+            print(f"Values should be {line.strip()}")
             sleep(5)
 
 if __name__ == "__main__":

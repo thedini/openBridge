@@ -170,14 +170,14 @@ void updateValues(){
                 cabin_temp = passed_data.substring(passed_data.indexOf(",")+1).toFloat();
                 break;
             case 1:
-                cleaned = passed_data.substring(0, passed_data.indexOf(",")+1);
-                voltage = cleaned.substring(0, cleaned.indexOf(",")-1).toFloat();
-                current = cleaned.substring(cleaned.indexOf(",")+1, cleaned.lastIndexOf(",")-1).toFloat();
+                cleaned = passed_data.substring(passed_data.indexOf(",")+1);
+                voltage = cleaned.substring(0, cleaned.indexOf(",")).toFloat();
+                current = cleaned.substring(cleaned.indexOf(",")+1, cleaned.lastIndexOf(",")).toFloat();
                 bat_temp = cleaned.substring(cleaned.lastIndexOf(",")+1).toFloat();
                 break;
             case 2:
-                cleaned = passed_data.substring(0, passed_data.indexOf(",")+1);
-                wind_speed = cleaned.substring(0, cleaned.indexOf(",")-1).toFloat();
+                cleaned = passed_data.substring(passed_data.indexOf(",")+1);
+                wind_speed = cleaned.substring(0, cleaned.indexOf(",")).toFloat();
                 wind_dir = cleaned.substring(cleaned.lastIndexOf(",")+1).toFloat();
                 break;
             case 3:
