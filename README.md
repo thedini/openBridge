@@ -8,6 +8,14 @@ OpenBridge will attempt to leverage exiting work from [CanBoat](https://github.c
 
 Ideally, each micro-service can act as if it is the authentic electronic device using the Teensy as a gateway to an actual ship or test NMEA 2000 bus. OpenBridge will grow to become a curriculum on NMEA 2000 analysis and shipboard security curriculum to provide the basis for self study or teaching! The hope is to give everyone the ability to explore this interesting niche of technology!
 
+## Quick Start
+
+1. Read up on the [CAN Protocol](docs/can_protocol.md)
+2. Setup Arduino and Teensy on your system (external links)
+3. Load up simple [example code](scr/ARDUINO/working_wind.ino) in Ardino
+4. Check out [python documentation](docs/python.md) to extend your capability
+5. Fork the repo and build your own!
+
 ## The Hardware
 
 The hardware is based on the latest Teensy (4.0 and 4.1). The Teensy provides a huge capability for the price which will lend itself to expansion at a later time. The Teensy also has **three** CAN interfaces to enable further expansion. The Teensy will be mounted on breadboard, perf-board or custom PCB that will enable it to easily connect to an NEMA 2000 bus in a standard fashion. The idea of standardizing on hardware is born from the desire to have a standard platform to develop on and support. As can be expected, most of the associated code and procedures can be adapted for various other platform which are outside the scope of this project. (ESP32, Arduino Mega, Raspberry Pi)
