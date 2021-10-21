@@ -16,6 +16,8 @@
 std::string convertToString(std::vector<std::string> &data);
 int add_message(std::vector<std::string> &data, std::vector<std::vector<std::string>> &queued_messages);
 void send_msg(std::vector<std::vector<std::string>> &queued_messages, Serial &serial_interface, bool verbose=true);
+
+
 int main()
 {
     int wind_speed = 0;
@@ -25,6 +27,8 @@ int main()
     Serial serial_port = Serial("COM4");
     serial_port.setupParams(115200, 8, 0, 0);
     std::vector<std::string> indi_message;
+
+
     while ( i < 100000) {
         wind_speed = (wind_speed % 20) + 1;
         times = (times % 2) + 1;
@@ -43,6 +47,7 @@ int main()
     return 0;
 }
 
+// Used to conver the vector into a CSV that the teensy will be able to parse.
 std::string convertToString(std::vector<std::string> &data){
     std::string csv_string = "";
     for(auto x: data) {
@@ -51,6 +56,8 @@ std::string convertToString(std::vector<std::string> &data){
     csv_string += "=";
     return csv_string;
 }
+
+// Updates queued messages in order to prevent duplicates.
 int add_message(std::vector<std::string> &data, std::vector<std::vector<std::string>> &queued_messages){
     std::string uid = data.front();
     int idx = 0;
@@ -65,6 +72,8 @@ int add_message(std::vector<std::string> &data, std::vector<std::vector<std::str
     return 0;
 
 }
+
+// Sends the queued messages.
 void send_msg(std::vector<std::vector<std::string>> &queued_messages, Serial &serial_interface, bool verbose){
     std::string data_str;
     for(auto x: queued_messages) {

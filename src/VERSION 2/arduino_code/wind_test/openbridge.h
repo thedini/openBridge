@@ -1,3 +1,8 @@
+/*
+*     Created By: Soups
+*     This file holds the helper functions in order to parse the data coming in from the bus. 
+*/
+
 #define SYSTEM_TIME 0
 #define RUDDER 1
 #define HEADING 2
@@ -57,7 +62,7 @@
 
 tNMEA2000_Teensyx NMEA2000;
 
-
+// Initilizes the data for the Teensy on the bus
 void init_nmea2000(){
         NMEA2000.SetProductInformation("0126996",
                                      137,
@@ -75,9 +80,184 @@ void init_nmea2000(){
       NMEA2000.EnableForward(false);
       NMEA2000.Open();
 }
+
+// Parses information from the NMEA Bus
 void parse_nmea(){
   NMEA2000.ParseMessages();
 }
+
+
+// Determines the message type that will be sent
+void send_msg(String* parsed){
+      switch(parsed[0].toInt()){
+            case SYSTEM_TIME:
+                  system_time(parsed);
+                  break;
+            case RUDDER:
+                  rudder(parsed);
+                  break;
+            case HEADING:
+                  heading(parsed);
+                  break;
+            case RATE_OF_TURN:
+                  rate_of_turn(parsed);
+                  break;
+            case ATTITUDE:
+                  attitude(parsed);
+                  break;
+            case MAGNETIC_VARIATION:
+                  magnetic_variation(parsed);
+                  break;
+            case ENGINE_PARAMS_RAPID:
+                  engine_params_rapid(parsed);
+                  break;
+            case ENGINE_PARAMS_DYNAMIC:
+                  engine_params_dynamic(parsed);
+                  break;
+            case TRANSMISSION_PARAMS:
+                  transmission_parameters(parsed);
+                  break;
+            case ENGINE_TRIP_PARAMS:
+                  engine_trip_params(parsed);
+                  break;
+            case FLUID_LEVEL:
+                  fluid_level(parsed);
+                  break;
+            case DC_DETAILED_STATUS:
+                  dc_detail_status(parsed);
+                  break;
+            case CHARGER_STATUS:
+                  charger_status(parsed);
+                  break;
+            case BATTERY_STATUS:
+                  battery_status(parsed);
+                  break;
+            case BATTERY_CONFIGURATION:
+                  battery_configuration(parsed);
+                  break;
+            case LEEWAY:
+                  leeway(parsed);
+                  break;
+            case BOAT_SPEED:
+                  boat_speed(parsed);
+                  break;
+            case WATER_DEPTH:
+                  water_depth(parsed);
+                  break;
+            case DISTANCE_LOG:
+                  distance_log(parsed);
+                  break;
+            case WINDLASS_CONTROL_STATUS:
+                  break;
+            case WINDLASS_OPERATING_STATUS:
+                  break;
+            case WINDLASS_MONITORING_STATUS:
+                  break;
+            case RAPID_LAT_LONG:
+                  rapid_lat_log(parsed);
+                  break;
+            case RAPID_COG_SOG:
+                  rapid_cog_sog(parsed);
+                  break;
+            case GNSS_POS_DATA:
+                  gnss_position_data(parsed);
+                  break;
+            case TIME_OFFSET:
+                  time_offset(parsed);
+                  break;
+            case CLASS_A_AIS_REPORT:
+                  class_a_ais_report(parsed);
+                  break;
+            case CLASS_B_AIS_REPORT:
+                  class_b_ais_report(parsed);
+                  break;
+            case CROSS_TRACK_ERROR:
+                  cross_track_error(parsed);
+                  break;
+            case NAV_INFO:
+                  nav_info(parsed);
+                  break;
+            case WAYPOINT_LIST:
+                  waypoint_list(parsed);
+                  break;
+            case APPEND_WAYPOINT_LIST:
+                  append_waypoint_list(parsed);
+                  break;
+            case GNSS_DOP_DATA:
+                  gnss_dop_data(parsed);
+                  break;
+            case GNSS_SATS_IN_VIEW:
+                  gnss_sats_in_view(parsed);
+                  break;
+            case SET_SATS_IN_VIEW:
+                  break;
+            case APPEND_SAT_INFO:
+                  break;
+            case AIS_STATIC_CLASS_A:
+                  ais_static_class_a(parsed);
+                  break;
+            case AIS_STATIC_CLASS_B_A:
+                  ais_static_class_b_a(parsed);
+                  break;
+            case AIS_STATIC_CLASS_B_B:
+                  ais_static_class_b_b(parsed);
+                  break;
+            case WAYPOINT_LIST_NEW:
+                  new_waypoint_list(parsed);
+                  break;
+            case WIND_SPEED:
+                  wind_speed(parsed);
+                  break;
+            case OUTSIDE_ENVIROMENTAL_PARAMS:
+                  outside_enviromental_params(parsed);
+                  break;
+            case ENVIROMENTAL_PARAMS:
+                  enviromental_params(parsed);
+                  break;
+            case TEMPERATURE:
+                  temperature_312(parsed);
+                  break;
+            case HUMIDITY:
+                  humidity(parsed);
+                  break;
+            case PRESSURE:
+                  pressure(parsed);
+                  break;
+            case SET_PRESSURE:
+                  set_pressure(parsed);
+                  break;
+            case TEMPERATURE_316:
+                  temperature_316(parsed);
+                  break;
+            case SMALL_CRAFT:
+                  small_craft_status(parsed);
+                  break;
+            default:
+                  break;
+      }
+}
+
+
+
+// Parses the csv values into an array
+void parseVals(String stream, String parsed[]) {
+  Serial.println(stream);
+  int current_cleaned_idx = 0;
+    String chopped = stream;
+    while(chopped.indexOf(",") != chopped.lastIndexOf(",")){
+      if(current_cleaned_idx != 0){
+        chopped = chopped.substring(chopped.indexOf(",") + 1, chopped.length());
+      }
+      String element = chopped.substring(0, chopped.indexOf(","));
+      
+      parsed[current_cleaned_idx] = element;
+      current_cleaned_idx++;
+    }
+}
+
+
+
+// Start of functions used to send the parsed data
 void system_time(String *parsedVals){
       tN2kMsg N2kMsg;
       unsigned char SID = parsedVals[1].toInt();
@@ -648,169 +828,3 @@ void small_craft_status( String *parsedVals){
 
 
 
-void send_msg(String* parsed){
-      switch(parsed[0].toInt()){
-            case SYSTEM_TIME:
-                  system_time(parsed);
-                  break;
-            case RUDDER:
-                  rudder(parsed);
-                  break;
-            case HEADING:
-                  heading(parsed);
-                  break;
-            case RATE_OF_TURN:
-                  rate_of_turn(parsed);
-                  break;
-            case ATTITUDE:
-                  attitude(parsed);
-                  break;
-            case MAGNETIC_VARIATION:
-                  magnetic_variation(parsed);
-                  break;
-            case ENGINE_PARAMS_RAPID:
-                  engine_params_rapid(parsed);
-                  break;
-            case ENGINE_PARAMS_DYNAMIC:
-                  engine_params_dynamic(parsed);
-                  break;
-            case TRANSMISSION_PARAMS:
-                  transmission_parameters(parsed);
-                  break;
-            case ENGINE_TRIP_PARAMS:
-                  engine_trip_params(parsed);
-                  break;
-            case FLUID_LEVEL:
-                  fluid_level(parsed);
-                  break;
-            case DC_DETAILED_STATUS:
-                  dc_detail_status(parsed);
-                  break;
-            case CHARGER_STATUS:
-                  charger_status(parsed);
-                  break;
-            case BATTERY_STATUS:
-                  battery_status(parsed);
-                  break;
-            case BATTERY_CONFIGURATION:
-                  battery_configuration(parsed);
-                  break;
-            case LEEWAY:
-                  leeway(parsed);
-                  break;
-            case BOAT_SPEED:
-                  boat_speed(parsed);
-                  break;
-            case WATER_DEPTH:
-                  water_depth(parsed);
-                  break;
-            case DISTANCE_LOG:
-                  distance_log(parsed);
-                  break;
-            case WINDLASS_CONTROL_STATUS:
-                  break;
-            case WINDLASS_OPERATING_STATUS:
-                  break;
-            case WINDLASS_MONITORING_STATUS:
-                  break;
-            case RAPID_LAT_LONG:
-                  rapid_lat_log(parsed);
-                  break;
-            case RAPID_COG_SOG:
-                  rapid_cog_sog(parsed);
-                  break;
-            case GNSS_POS_DATA:
-                  gnss_position_data(parsed);
-                  break;
-            case TIME_OFFSET:
-                  time_offset(parsed);
-                  break;
-            case CLASS_A_AIS_REPORT:
-                  class_a_ais_report(parsed);
-                  break;
-            case CLASS_B_AIS_REPORT:
-                  class_b_ais_report(parsed);
-                  break;
-            case CROSS_TRACK_ERROR:
-                  cross_track_error(parsed);
-                  break;
-            case NAV_INFO:
-                  nav_info(parsed);
-                  break;
-            case WAYPOINT_LIST:
-                  waypoint_list(parsed);
-                  break;
-            case APPEND_WAYPOINT_LIST:
-                  append_waypoint_list(parsed);
-                  break;
-            case GNSS_DOP_DATA:
-                  gnss_dop_data(parsed);
-                  break;
-            case GNSS_SATS_IN_VIEW:
-                  gnss_sats_in_view(parsed);
-                  break;
-            case SET_SATS_IN_VIEW:
-                  break;
-            case APPEND_SAT_INFO:
-                  break;
-            case AIS_STATIC_CLASS_A:
-                  ais_static_class_a(parsed);
-                  break;
-            case AIS_STATIC_CLASS_B_A:
-                  ais_static_class_b_a(parsed);
-                  break;
-            case AIS_STATIC_CLASS_B_B:
-                  ais_static_class_b_b(parsed);
-                  break;
-            case WAYPOINT_LIST_NEW:
-                  new_waypoint_list(parsed);
-                  break;
-            case WIND_SPEED:
-                  wind_speed(parsed);
-                  break;
-            case OUTSIDE_ENVIROMENTAL_PARAMS:
-                  outside_enviromental_params(parsed);
-                  break;
-            case ENVIROMENTAL_PARAMS:
-                  enviromental_params(parsed);
-                  break;
-            case TEMPERATURE:
-                  temperature_312(parsed);
-                  break;
-            case HUMIDITY:
-                  humidity(parsed);
-                  break;
-            case PRESSURE:
-                  pressure(parsed);
-                  break;
-            case SET_PRESSURE:
-                  set_pressure(parsed);
-                  break;
-            case TEMPERATURE_316:
-                  temperature_316(parsed);
-                  break;
-            case SMALL_CRAFT:
-                  small_craft_status(parsed);
-                  break;
-            default:
-                  break;
-      }
-}
-
-
-
-
-void parseVals(String stream, String parsed[]) {
-  Serial.println(stream);
-  int current_cleaned_idx = 0;
-    String chopped = stream;
-    while(chopped.indexOf(",") != chopped.lastIndexOf(",")){
-      if(current_cleaned_idx != 0){
-        chopped = chopped.substring(chopped.indexOf(",") + 1, chopped.length());
-      }
-      String element = chopped.substring(0, chopped.indexOf(","));
-      
-      parsed[current_cleaned_idx] = element;
-      current_cleaned_idx++;
-    }
-}
