@@ -33,3 +33,8 @@ The software side of the OpenBridge is going to leverage [ttlappalaine NMEA 2000
 In its most simple implementation you can use OpenBridge to start looking at data with one of many Logic Analyzers and learning how to decipher different parts of the NMEA2000 CAN Frame with the basic **wind sensor**
 
 Extend the capability of the **wind sensor** by feeding your own wind parameters via a csv file.
+
+
+## UPDATES
+
+19OCT21: Huge push of updated code base. Completely refactored. Plan to add more documentation soon!
