@@ -14,9 +14,9 @@ The various python scripts allow a computer to interface with the teensy.
 
 * `sudo python3 csv_serial.py COM11 sample.csv`
     * This option takes pre-loaded values from the csv and then sends them to the serial bus.
-    * This can be paired with the multi_sender or working_wind_input firmware 
+    * This can be paired with the multi_sender or working_wind_input firmware
     * Example CSVs are provided for each
-* MULTI_SENDER 
+* MULTI_SENDER
     * CSV format:
         * Column 1: Device type(0: Temp; 1: Battery; 2: Wind; 3: Humidity; 4: Depth)
         * Each column that follows is specific to the device type
