@@ -1,0 +1,10 @@
+{
+  "name": "Weather Station",
+  "description": "Simulates a weather station with temperature, pressure, and humidity",
+  "manufacturer": {"name": "Maretron", "code": 137},
+  "sensors": [
+    {"slot": 0, "type": "outside_temp", "default_value": 0.5, "active": true},
+    {"slot": 1, "type": "pressure", "default_value": 0.5, "active": true},
+    {"slot": 2, "type": "humidity", "default_value": 0.6, "active": true}
+  ]
+}

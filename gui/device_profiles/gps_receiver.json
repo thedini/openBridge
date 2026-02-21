@@ -1,0 +1,10 @@
+{
+  "name": "Generic GPS Receiver",
+  "description": "Simulates a basic GPS providing heading, speed, and water depth",
+  "manufacturer": {"name": "Garmin", "code": 229},
+  "sensors": [
+    {"slot": 0, "type": "heading", "default_value": 0.5, "active": true},
+    {"slot": 1, "type": "speed", "default_value": 0.25, "active": true},
+    {"slot": 2, "type": "water_depth", "default_value": 0.3, "active": true}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Wind Instrument",
+  "description": "Simulates a masthead wind sensor providing speed and angle",
+  "manufacturer": {"name": "B&G", "code": 381},
+  "sensors": [
+    {"slot": 0, "type": "wind_speed", "default_value": 0.3, "active": true},
+    {"slot": 1, "type": "wind_angle", "default_value": 0.25, "active": true},
+    {"slot": 2, "type": "outside_temp", "default_value": 0.5, "active": true}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Engine Monitor",
+  "description": "Simulates an engine gateway with RPM, battery, and tank level",
+  "manufacturer": {"name": "Yamaha", "code": 1862},
+  "sensors": [
+    {"slot": 0, "type": "engine_rpm", "default_value": 0.4, "active": true},
+    {"slot": 1, "type": "battery_volt", "default_value": 0.42, "active": true},
+    {"slot": 2, "type": "tank_level", "default_value": 0.75, "active": true}
+  ]
+}
